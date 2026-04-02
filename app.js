@@ -50,17 +50,19 @@ function creatDes(tab, index) {
 				$h2.textContent = tab[i].title;
 			}
 		}
+		index.append($div, $h2);
+		$div.append($h3, $p);
 	}
 
-	for (let i = 0; i < imgs.length; i++) {
-		let img = imgs[i];
-		img.addEventListener("click", () => {
-			creatDes(pictures, img);
-		});
-		document.addEventListener("DOMContentLoaded", () => {
-			setTimeout(() => {
-				creatDes(pictures, img);
-			}, 2500);
-		});
-	}
+	$div.classList.add("carousel-btn-description");
+
+	index.append($div, $h2);
+	$div.append($h3, $p);
+}
+
+for (let i = 0; i < imgs.length; i++) {
+	let img = imgs[i];
+	img.addEventListener("click", () => {
+		creatDes(pictures, img);
+	});
 }
